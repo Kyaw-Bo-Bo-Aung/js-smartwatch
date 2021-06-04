@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Watch</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+	<style>
+		body,html{
+			border: 0;
+			margin: 0;
+			background: #FC5C7D;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+		}
+		#nav{
+			background-color: rgba(0,0,0, 0.4);
+			margin-top: 0;
+			padding: 15px 0;
+			color: white;
+			text-align: center;
+		}
+		.wrapper{
+			display: flex;
+			justify-content: center;
+			margin: 0 50px;
+			background: rgba( 255, 255, 255, 0.2 );
+			box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+			backdrop-filter: blur( 4px );
+			-webkit-backdrop-filter: blur( 4px );
+			border-radius: 10px;
+			border: 1px solid rgba( 255, 255, 255, 0.18 );
+		}
+		#watch-img-div{
+			position: relative;
+			display: flex;
+		}
+		#time-string{
+			display: flex;
+			position: absolute;
+			align-items: center;
+			justify-content: center;
+			color: red;
+			width: 100%;
+			height: 100%;
+			font-size: 30px;
+			font-family: 'Montserrat', sans-serif; 
+		}
+		#watch-name, h1, h3{
+			font-family: 'Montserrat', sans-serif;
+		}
+		p, span, button{
+			font-family: 'Source Sans Pro';
+		}
+		.color-box{
+			display: inline-block;
+			width: 70px;
+			height: 40px;
+			border-radius: 5px;
+			margin-right: 5px;
+			cursor: pointer;
+		}
+		.color-box.red{
+			background-color: #ca3d22;
+		}
+		.color-box.black{
+			background-color: #23211f;
+		}
+		.color-box.blue{
+			background-color: #565681;
+		}
+		.color-box.pink{
+			background-color: #e9c7be;
+		}
+		.color-box.purple{
+			background-color: #8a5362;
+		}
+		#feature #time-btn, #feature #heart-rate-btn{
+			background-color: #ddd;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-right: 10px;
+			background: rgba( 255, 255, 255, 0.2 );
+			box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+			backdrop-filter: blur( 4px );
+			-webkit-backdrop-filter: blur( 4px );
+			border-radius: 10px;
+			border: 1px solid rgba( 255, 255, 255, 0.18 );
+		}
+		#feature #time-btn:hover, #feature #heart-rate-btn:hover{
+			color: white;
+			background: rgba( 0, 0, 0, 0.2 );
+			box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+			backdrop-filter: blur( 4px );
+			-webkit-backdrop-filter: blur( 4px );
+			border-radius: 10px;
+			border: 1px solid rgba( 255, 255, 255, 0.18 )
+		}
+		#time-string #time,#time-string #heat-rate{
+			display: none;
+		}
+		#buy-btn{
+			padding: 10px 30px;
+			font-size: 20px;
+			margin-top: 50px;
+			cursor: pointer;
+			border-radius: 5px;
+			background-color: #fbc02d;
+			border: 1px;
+			color: black;
+			font-weight: bold;
+		}
+		div.active{
+			border: 3px groove black;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="nav">Watches</h1>
+	<div class="wrapper">
+		<div id="watch-img-div">
+			<img id="watch-img" src="https://i.imgur.com/PTgQlim.png" alt="watch img" width="500px">
+			<div id="time-string">
+				<span id="time">12: 00: 00</span>
+				<div id="heart-rate">
+					<h1 style="margin: 5px 0;">❤️</h1>
+					<p style="text-align: center; margin: 5px 0;">97</p>
+				</div>
+			</div>
+		</div>
+		<div id="description">
+			<h1 id="watch-name">Fibit 19 - The Smart Watch</h1>
+			<p>The dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat.</p>
+			<h3>Select Color</h3>
+			<div class="color-box red" onclick="changeWatch(red)" id="red"></div>
+			<div class="color-box black" onclick="changeWatch(black)" id="black"></div>
+			<div class="color-box blue" onclick="changeWatch(blue)" id="blue"></div>
+			<div class="color-box pink" onclick="changeWatch(pink)" id="pink"></div>
+			<div class="color-box purple" onclick="changeWatch(purple)" id="purple"></div>
+			<h3>Features</h3>
+			<div id="feature">
+				<span id="time-btn" onclick="showTime()">Time</span>
+				<span id="heart-rate-btn" onclick="showHeartRate()">Heart Rate</span>
+			</div>
+
+			<button id="buy-btn" style="margin-bottom: 50px;">Buy Now</button>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
